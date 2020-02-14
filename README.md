@@ -3,7 +3,7 @@
 This is a simple calendar I created for myself so that I could keep track of my schedule, meetings and event at work. My calendar represents my 9-5 working hour and it helps me to manage my time effectively.
 
 ## Layout of my-calendar:
-![Hà's calendar](Assets/ha-calendar.jpg)
+![Hà's calendar](img/ha-calendar.jpg)
 ---
 
 ## Description:
