@@ -34,7 +34,8 @@ var time = $(this).parent().attr("id");
 var typedValue = $(this).siblings(".Event").val(); // grabbing the value from ".Event"
 localStorage.setItem(time, typedValue);
 
-})
+});
+
 // assigning Value to an element (the <textarea>) 
 $("#hour-9 .Event").val(localStorage.getItem("hour-9")); 
 $("#hour-10 .Event").val(localStorage.getItem("hour-10"));
