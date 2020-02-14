@@ -1,6 +1,11 @@
-var timeArr = ["9 AM", "10 AM", "11 AM", "12 AM", "13 PM", "14 PM", "15 PM", "16 PM", "17 PM"]
+//assign a variable for the 8 hours of working
+var timeArr = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 var idContainer = $("#container");
+//the working time starting at 9
 var id = 9;
+ 
+var now = moment().hour();
+//console.log(now);
 
 for (i = 0; i < timeArr.length; i++) {
 
@@ -14,25 +19,44 @@ newRow.attr("class", "row");
 newRow.attr("id", "hour-" + idStr);
 newRowTimeDiv.attr("class", "col-1 Time text-center");
 newRowEventDiv.attr("class", "col-10 Event");
-newRowSaveDiv.attr("class", "col-1 Save");
+//newRowSaveDiv.attr("class", "col-1 Save");
 
 newRowTimeDiv.text(timeArr[i]);
 newRowEventDiv.text("");
 newRowSaveDiv.text("")
 
 idContainer.append(newRow);
-newRow.append(newRowTimeDiv, newRowEventDiv, newRowSaveDiv);
+newRow.append(newRowTimeDiv, newRowEventDiv,);
 var newIcon = $("<button>");
+newIcon.attr("class", "btn-color")
 
-newIcon.attr("class", "far fa-save fa-2x pt-3");
+//newIcon.attr("class", "col-1")
+
+newIcon.attr("class", "far fa-save fa-2x pt-3 btn-info");
 newRow.append(newIcon);
-id++;
+id++;   
+
+if (parseInt(timeArr[i]) < now) {
+    newRowEventDiv.addClass("past");
+    console.log("<now")
+}
+
+else if (parseInt(timeArr[i]) > now) {
+    newRowEventDiv.addClass("future");
+    console.log("<now")
+}
+
+else {
+    newRowEventDiv.addClass("present");
+    console.log("<now")
+}
 }
 $(document).on("click", ".far", function() {
-// console.log("working", $(this).siblings(".Event").val()); 
+console.log("working", $(this).siblings(".Event").val()); 
 var time = $(this).parent().attr("id");
-var typedValue = $(this).siblings(".Event").val(); // grabbing the value from ".Event"
+var typedValue = $(this).siblings(".Event").val(); 
 localStorage.setItem(time, typedValue);
+
 
 });
 
@@ -49,5 +73,3 @@ $("#hour-17 .Event").val(localStorage.getItem("hour-17"));
 
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
 
-// create conditional if we're past a certain point
-// change the color use bootstrap <style>

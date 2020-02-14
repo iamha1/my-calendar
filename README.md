@@ -2,7 +2,8 @@
 
 This is a simple calendar I created for myself so that I could keep track of my schedule, meetings and event at work. My calendar represents my 9-5 working hour and it helps me to manage my time effectively.
 
-## Link to my-calendar:
+## Layout of my-calendar:
+![Hà's calendar](Assets/ha-calendar.jpg)
 ---
 
 ## Description:
@@ -13,8 +14,9 @@ This is a simple calendar I created for myself so that I could keep track of my 
 -   Adding current time, using Moment.js.
 -   Adding color coded for different time block of past, present, and future.
 
-## Layout of my-calendar: 
+## Link to my-calendar: 
 
+https://github.com/iamha1/my-calendar
 ----
 
 ## Reference: 
